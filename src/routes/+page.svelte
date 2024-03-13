@@ -1,32 +1,34 @@
 
 <script>
 	import '/src/styles/global.css';
+   import AddTodo from '../components/AddTodo.svelte';
+   import Todo from '../components/Todo.svelte';
 </script>
 
 <main class="container">
-   <section>siema</section>
-   <section class="input-wrapper">
-      <div >
-         <label for="elo">Add new todo</label>
-         <input id="elo"/>
-      </div>
+   <section>
+      <Todo />
+      <Todo />
+      <Todo />
+   </section>
+   <section>
+      <AddTodo />
    </section>
 </main>
 
 
 <style>
    .container{
-      height: 100vh;
-   }
-
-   .container section { 
-      height: 50%;
-   }
-
-   .input-wrapper div {
-      background-color: green;
+      width: 60%;
       display: flex;
       flex-direction: column;
-      justify-items: end;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 150px;
+      padding-bottom: 50px;
+   }
+
+   .container section{
+      width: 100%;
    }
 </style>
