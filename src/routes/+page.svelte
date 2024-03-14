@@ -3,13 +3,14 @@
 	import '/src/styles/global.css';
    import AddTodo from '../components/AddTodo.svelte';
    import Todo from '../components/Todo.svelte';
+   import { todos } from '../store'
 </script>
 
 <main class="container">
    <section>
-      <Todo />
-      <Todo />
-      <Todo />
+      {#each $todos as {value}}
+         <Todo value={value} />
+      {/each}
    </section>
    <section>
       <AddTodo />

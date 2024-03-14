@@ -1,10 +1,25 @@
+<script>
+    let todoValue = ''
+	import { todos } from '../store.ts';
+
+    const handleSubmit = () => {
+        $todos = [...$todos, {
+            id: Math.random().toString(36).replace(/[^a-z]+/g, ''),
+            value: todoValue
+        }]
+        todoValue = ''
+    }
+
+    console.log(Math.random().toString(36).replace(/[^a-z]+/g, ''))
+</script>
+
 <form>
     <div>
         <label for="elo">Create task</label>
     </div>
     <div class="input-wrapper">
-        <input id="elo"/>
-        <button type="submit">Add</button>
+        <input id="elo" bind:value={todoValue}/>
+        <button type="submit" on:click={handleSubmit}>Add</button>
     </div>
 </form>
 
